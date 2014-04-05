@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Asd : asd" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Asd</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/dortas88/asd">View on GitHub</a>
+
+          <h1 id="project_title">Asd</h1>
+          <h2 id="project_tagline">asd</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/dortas88/asd/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/dortas88/asd/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="includetrida_zavodh" class="anchor" href="#includetrida_zavodh"><span class="octicon octicon-link"></span></a>include"trida_zavod.h"</h1>
+
+<p>int main()
+{
+    Auto *pole = new Auto[A];
+    Zavod *pole1 = new Zavod[A];</p>
+
+<pre><code>for(int k=0;k&lt;A;k++)
+{
+    cout &lt;&lt; pole[k].Vzdalenost() &lt;&lt; " , ";
+}
+
+for(int k=0;k&lt;A;k++)
+{
+    //pole1[k].pamet=&amp;pole[k];
+    pole1[k].VlozitAuto(pole1[k].pamet , pole[k]);
+    cout &lt;&lt; "auto bylo vlozeno" &lt;&lt; endl;
+}
+
+
+
+for(int k=0;k&lt;A;k++)
+{
+
+    //cout &lt;&lt; *pole1[k].vzdalenost() &lt;&lt; " , ";
+}
+cout &lt;&lt; endl;
+system("pause");
+return 0;
+</code></pre>
+
+<p>}</p>
+
+<hr><h1>
+<a name="includetrida_autoh" class="anchor" href="#includetrida_autoh"><span class="octicon octicon-link"></span></a>include"trida_auto.h"</h1>
+
+<p>class Zavod
+{
+private:</p>
+
+<p>public:
+    Auto *pamet;
+    int Tridit();
+    int DalsiMinuta(Auto pole[]);
+    int VlozitAuto(Auto *pom, Auto pomik);
+    int Pozice();</p>
+
+<p>};</p>
+
+<p>int Zavod::DalsiMinuta(Auto pole[])
+{
+    int pom=0;
+    for(int j=0; j&lt;M; j++)
+    {
+        for(int k=0; k&lt;A; k++)
+        {
+        pom= rand()%6;
+        if(pom&lt;=3) {pole[k].Pokracovat();}
+        if(pom==4) {pole[k].Zastavit();}
+        if(pom==5) {pole[k].Opravit();}
+        }
+    }
+    return 0;
+}</p>
+
+<p>int Zavod::Tridit()
+{
+    for(int k=0; k&lt;A; k++)
+    {</p>
+
+<pre><code>}
+
+return 0;
+</code></pre>
+
+<p>}</p>
+
+<p>int Zavod::VlozitAuto(Auto *pom, Auto pomik)
+{
+    pom=&amp;pomik; 
+    return 0;
+}</p>
+
+<p>int Zavod::Pozice()
+{
+    return 0;
+}</p>
+
+<hr><h1>
+<a name="include" class="anchor" href="#include"><span class="octicon octicon-link"></span></a>include</h1>
+
+<h1>
+<a name="include-1" class="anchor" href="#include-1"><span class="octicon octicon-link"></span></a>include</h1>
+
+<h1>
+<a name="include-2" class="anchor" href="#include-2"><span class="octicon octicon-link"></span></a>include</h1>
+
+<p>using namespace std;</p>
+
+<p>const int A=20;     //pocet aut v zavodu
+const int R1=150;   //minimanlni pocatecni prumerna rychlost
+const int R2=180;   //maximalni pocatecni prumerna rychlost
+const int P=10;     // procento zmenseni prumerne rychlosti pri oprave
+const int M=120;    // delka zavodu v minutach
+int pom=1;</p>
+
+<p>class Auto
+{
+private:
+    int cislo;
+    double average, zpozdeni,vzdalenost;</p>
+
+<p>public:
+    Auto();
+    ~Auto();
+    int Cislo();
+    int Pokracovat();
+    int Zastavit();
+    int Opravit();
+    double Vzdalenost();</p>
+
+<p>};</p>
+
+<p>Auto::Auto()
+{
+    average=(rand()%(R2-R1)+R1)/100;
+    zpozdeni=rand()%P;
+    vzdalenost=0;
+    cislo=pom;
+    pom++;
+}</p>
+
+<p>Auto::~Auto()
+{
+    average=NULL;
+    zpozdeni=NULL;
+    vzdalenost=NULL;
+    cislo=NULL;
+}</p>
+
+<p>int Auto::Cislo()
+{
+    return cislo;
+}</p>
+
+<p>int Auto::Pokracovat()
+{
+    vzdalenost+=average/60;
+    return 0;
+}</p>
+
+<p>int Auto::Zastavit()
+{
+    return 0;
+}</p>
+
+<p>int Auto::Opravit()
+{
+    average-=average*zpozdeni;
+    return 0;
+}</p>
+
+<p>double Auto::Vzdalenost()
+{
+    return vzdalenost;
+}</p>
+
+<hr>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Asd maintained by <a href="https://github.com/dortas88">dortas88</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
